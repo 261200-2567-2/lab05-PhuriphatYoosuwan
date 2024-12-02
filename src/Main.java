@@ -1,17 +1,26 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.print("Hello and welcome!");
+        Swordsman yuusha = new Swordsman("Yuusha", new Stats(100,100, 10));
+        Mage maou = new Mage("Maou", new Stats(100,100, 10));
+        Sword excalibur = new Sword("Excalibur", "Sword", 10);
+        Staff ra = new Staff("Staff of Ra", "Staff", 10);
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        yuusha.showStats();
+        yuusha.showEquipments();
+        maou.showStats();
+        maou.showEquipments();
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+
+        yuusha.equip(excalibur);
+        maou.equip(ra);
+        yuusha.showStats();
+        yuusha.showEquipments();
+        maou.showStats();
+        maou.showEquipments();
+
+        yuusha.attack(maou);
+        maou.attack(yuusha);
+        yuusha.showStats();
+        maou.showStats();
     }
 }
